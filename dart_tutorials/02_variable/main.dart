@@ -2,18 +2,21 @@ void main() {
   // ############################################################
   // 01_values
   // ############################################################
-  String strName = "재혁";
+  String strName = "Jaehyeok";
   int nAge = 1;
 
 // ############################################################
   // 02_dynamic or var
   // ############################################################
-  dynamic vVal; // = var vVal
+  var vHi = "hi";
+  // vHi = 3; // error
+  dynamic vVal;
 
   vVal = "요금";
   vVal = 500;
 
-  print(strName);
+  print("1) My name is " + strName);
+  print("2) My name is $strName");
   print(nAge.toString());
   print(vVal);
 
