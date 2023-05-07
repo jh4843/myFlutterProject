@@ -45,3 +45,27 @@ my Flutter Projects
 # create project
 
 - flutter create project_name
+
+# run project
+
+- F5 (Debug)
+- PS> flutter run
+
+# execute point
+
+- lib/main.dart
+
+```
+void main() {
+  runApp(const MyApp());
+}
+```
+
+# widgets
+
+- a lot of widgets
+  [Flutter widgets](<[./FlutterArchitecture.png](https://docs.flutter.dev/development/ui/widgets)>)
+
+# App
+
+- material, cupertino are google & apple design system.

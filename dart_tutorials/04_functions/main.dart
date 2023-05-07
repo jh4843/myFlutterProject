@@ -35,10 +35,14 @@ ListOfInts reverseListOfNumbers(ListOfInts list) {
   return reversed.toList();
 }
 
+int plus(int a, int b, [int? c]) => a + b + (c ?? 0);
+
 void main() {
   // ############################################################
   // 01_basic
   // ############################################################
+
+  print(plus(1, 2));
 
   print("==01_basic==============================================");
 

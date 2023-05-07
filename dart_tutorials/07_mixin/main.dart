@@ -1,16 +1,16 @@
 // mixin should't have constructor
 
-class Strong {
+mixin Strong {
   final double dStrengthLevel = 1500.99;
 }
 
-class QuickRunner {
+mixin QuickRunner {
   void runQuick() {
     print("ruuuuuuun!");
   }
 }
 
-class Tall {
+mixin Tall {
   final double height = 1.99;
 }
 
