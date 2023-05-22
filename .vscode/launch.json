@@ -8,6 +8,7 @@
       "name": "Dart & Flutter",
       "request": "launch",
       "type": "dart"
+      //"args": ["--web-renderer", "html", "--web-hostname", "127.0.0.1"]
     }
   ]
 }

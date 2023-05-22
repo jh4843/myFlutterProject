@@ -1,37 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:toonflix/models/webtoon_model.dart';
 import 'package:toonflix/services/api_service.dart';
+import 'package:toonflix/widgets/webtoon_widget.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+//class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
+  HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
+  final Future<List<WebToonModel>> webtoons = ApiService.getTodaysToons();
 
-class _HomeScreenState extends State<HomeScreen> {
-  List<WebToonModel> webtoons = [];
-  bool isLoading = true;
-
-  void waitForWebToons() async {
-    webtoons = await ApiService.getTodaysToons();
-
-    isLoading = false;
-
-    setState(() {});
-  }
-
-  @override
-  void initState() {
-    super.initState();
-
-    waitForWebToons();
-  }
-
+  // List<WebToonModel> webtoons = [];
   @override
   Widget build(BuildContext context) {
-    print("webToons: $webtoons");
-    print("isLoading: $isLoading");
+    print(webtoons);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -45,6 +26,76 @@ class _HomeScreenState extends State<HomeScreen> {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
         ),
       ),
+
+      // Builder is rendering UI function
+      body: FutureBuilder(
+        future: webtoons,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            // 01_ Original ListView
+            // return ListView(
+            //   children: [
+            //     for (var webtoon in snapshot.data!) Text(webtoon.title)
+            //   ],
+            // );
+
+            // 02_ListView.Builder: itemBuilder를 통해 필요한 부분만 로드한다.
+            // return ListView.builder(
+            //   scrollDirection: Axis.horizontal,
+            //   itemCount: snapshot.data!.length,
+            //   itemBuilder: (context, index) {
+            //     print("index: $index");
+            //     var webtoon = snapshot.data![index];
+            //     return Text(webtoon.title);
+            //   },
+            // );
+
+            // 03_ListView.separated: item들 사이에 separator를 넣어줄수 있다.
+            //return makeItemList(snapshot);
+
+            // 04 Column
+            return Column(
+              children: [
+                const SizedBox(
+                  height: 50,
+                ),
+                Expanded(
+                  child: makeItemList(snapshot),
+                ),
+              ],
+            );
+          }
+
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      ),
+    );
+  }
+
+  ListView makeItemList(AsyncSnapshot<List<WebToonModel>> snapshot) {
+    return ListView.separated(
+      padding: const EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: 20,
+      ),
+      scrollDirection: Axis.horizontal,
+      itemCount: snapshot.data!.length,
+      itemBuilder: (context, index) {
+        var webtoon = snapshot.data![index];
+        print("data's thumb: ${webtoon.thumb}");
+        return Webtoon(
+          title: webtoon.title,
+          thumb: webtoon.thumb,
+          id: webtoon.id,
+        );
+      },
+      separatorBuilder: (context, index) {
+        return const SizedBox(
+          width: 40,
+        );
+      },
     );
   }
 }
