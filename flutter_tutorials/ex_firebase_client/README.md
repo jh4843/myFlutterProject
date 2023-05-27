@@ -1,16 +1,27 @@
 # ex_firebase_client
 
-A new Flutter project.
+Firebase client flutter project.
 
-## Getting Started
+# Autho
 
-This project is a starting point for a Flutter application.
+## Reference Link
 
-A few resources to get you started if this is your first Flutter project:
+- flutter fire
+  - https://firebase.flutter.dev/
+-
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Getting Start
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- install cli
+  - $dart pub global activate flutterfire_cli
+    - When fail, try thie command $dart pub cache clean
+- Configure
+  - project_path$ flutterfire configure
+- Add dependency
+  - $ flutter pub add firebase_core
+-
+
+## Add authentication
+- add plugin
+  - flutter pub add firebase_auth
+  - 
