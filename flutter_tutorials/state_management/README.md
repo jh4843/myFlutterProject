@@ -2,15 +2,21 @@
 
 A new Flutter project.
 
-## Getting Started
+# execute point
 
-This project is a starting point for a Flutter application.
+- lib/main.dart
 
-A few resources to get you started if this is your first Flutter project:
+```
+void main() {
+  runApp(const MyApp());
+}
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# widgets
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- a lot of widgets
+  [Flutter widgets](<[./FlutterArchitecture.png](https://docs.flutter.dev/development/ui/widgets)>)
+
+# App
+
+- material, cupertino are google & apple design system.
