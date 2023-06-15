@@ -5,6 +5,9 @@
 **/*plugin_registrant.cpp
 **/*plugin_registrant.h
 
+**/generated_plugin_registrant.cc
+**/generated_plugin_registrant.h
+
 # Miscellaneous
 *.class
 *.lock
