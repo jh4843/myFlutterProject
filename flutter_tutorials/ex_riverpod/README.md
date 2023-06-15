@@ -1,16 +1,29 @@
 # ex_riverpod
 
-A new Flutter project.
+Tutorial for riverpod 2.0
 
-## Getting Started
+## Reference
+[riverpod 2.0](https://docs-v2.riverpod.dev/)
 
-This project is a starting point for a Flutter application.
+## Install
 
-A few resources to get you started if this is your first Flutter project:
+```yaml 
+## pubspec.yaml
+dependencies:
+  cupertino_icons: ^1.0.2
+  hooks_riverpod: ^2.3.6
+  riverpod_annotation: ^2.1.1
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+dev_dependencies:
+  build_runner:
+  custom_lint:
+  riverpod_generator: ^2.2.3
+  flutter_lints: ^2.0.0
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Run the code-generator
+```console
+$ flutter pub run build_runner watch
+```
+
+### 
