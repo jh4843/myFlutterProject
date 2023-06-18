@@ -70,6 +70,9 @@ flutter_*.png
 linked_*.ds
 unlinked.ds
 unlinked_spec.ds
+**/generated_plugins.cmake
+**/generated_plugin_registrant.cc
+**/generated_plugin_registrant.h
 
 # Android related
 **/android/**/gradle-wrapper.jar

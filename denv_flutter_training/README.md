@@ -21,3 +21,5 @@ Add dependency
 ```console
 $ flutter pub add firebase_core
 ```
+
+## go_router
