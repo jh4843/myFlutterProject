@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import './firebase_options.dart';
+import './models/user_model.dart';
 import 'package:go_router/go_router.dart';
 
 //import 'package:flutter_hooks/flutter_hooks.dart';
@@ -13,10 +14,10 @@ import 'screens/home_screen.dart';
 final _router = GoRouter(
   routes: [
     GoRoute(
-      path: '/',
-      builder: (context, state) =>
-          const MyHomePage(title: 'Flutter Demo Home Page'),
-    ),
+        path: '/',
+        builder: (context, state) =>
+            const MyHomePage(title: 'Flutter Demo Home Page'),
+        routes: const []),
   ],
 );
 
@@ -30,9 +31,15 @@ Future<void> main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
 
+  @override
+  ConsumerState<ConsumerStatefulWidget> createState() => _MyAppState();
+}
+
+class _MyAppState extends ConsumerState<MyApp> {
+  UserModel? userModel;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
