@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import './firebase_options.dart';
-import './models/user_model.dart';
+import 'domain/models/user_model.dart';
 import 'package:go_router/go_router.dart';
 
 //import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 //import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'screens/home_screen.dart';
+import 'presentation/main/home_screen.dart';
 
 // GoRouter configuration
 final _router = GoRouter(
