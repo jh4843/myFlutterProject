@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import './firebase_options.dart';
-import 'domain/models/user_model.dart';
+import 'data/models/user_model.dart';
 import 'package:go_router/go_router.dart';
 
 //import 'package:flutter_hooks/flutter_hooks.dart';
@@ -9,15 +9,21 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 //import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'presentation/main/home_screen.dart';
+import 'presentation/users/sign_in_screen.dart';
 
 // GoRouter configuration
 final _router = GoRouter(
   routes: [
     GoRoute(
-        path: '/',
-        builder: (context, state) =>
-            const MyHomePage(title: 'Flutter Demo Home Page'),
-        routes: const []),
+      path: '/',
+      builder: (context, state) =>
+          const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: const [],
+    ),
+    GoRoute(
+      path: '/signin',
+      builder: (context, state) => const SignInScreen(title: 'Sign In Page'),
+    ),
   ],
 );
 

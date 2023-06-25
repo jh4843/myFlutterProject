@@ -3,9 +3,11 @@
 A new Flutter project.
 
 ## reference projects
+
 - architecture
   - https://github.com/devmuaz/flutter_clean_architecture/tree/master
   - https://github.com/Ahmedabdelalem61/flutter-mvvm-arch/tree/main
+  - https://github.com/Uuttssaavv/flutter-clean-architecture-riverpod/tree/master
 
 ## firebase configuration
 
@@ -28,5 +30,3 @@ $ flutter pub add firebase_core
 ```
 
 ## go_router
-
-
