@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import './firebase_options.dart';
@@ -10,6 +12,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'presentation/main/home_screen.dart';
 import 'presentation/users/sign_in_screen.dart';
+import 'presentation/users/sign_up_screen.dart';
+import 'presentation/ui/layout_screen.dart';
 
 // GoRouter configuration
 final _router = GoRouter(
@@ -22,8 +26,25 @@ final _router = GoRouter(
     ),
     GoRoute(
       path: '/signin',
-      builder: (context, state) => const SignInScreen(title: 'Sign In Page'),
+      builder: (context, state) => const SignInScreen(title: 'Sign In'),
     ),
+    GoRoute(
+      path: '/signup',
+      builder: (context, state) => const SignUpScreen(title: 'Sign Up'),
+    ),
+    //
+    GoRoute(
+        path: '/ui',
+        builder: (context, state) =>
+            const MyHomePage(title: 'Flutter Demo Home Page'),
+        routes: <RouteBase>[
+          GoRoute(
+            name: "layouts",
+            path: "layouts",
+            builder: (context, state) =>
+                const LayoutScreen(title: 'Layout Page'),
+          )
+        ])
   ],
 );
 

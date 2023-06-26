@@ -25,15 +25,15 @@ class DenvDrawer extends StatelessWidget {
             arrowColor: Colors.redAccent,
           ),
           ListTile(
-            title: const Text('Item 1'),
+            title: const Text('Sign In'),
             onTap: () {
-              context.go("/");
+              context.go("/signin");
             },
           ),
           ListTile(
-            title: const Text('Item 2'),
+            title: const Text('Layouts'),
             onTap: () {
-              context.go("/signin");
+              context.go("/layouts");
             },
           ),
         ],
